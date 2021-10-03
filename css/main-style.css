@@ -18,9 +18,7 @@
   --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
   --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
 }
-/* fonts */
-/* font-family: 'Inter', sans-serif; */
-/* font-family: 'Lexend Deca', sans-serif; */
+
 body {
   background-color: var(--Very-dark-blue);
   height: 100vh;
@@ -37,8 +35,9 @@ body {
   border-radius: 2%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* overflow: hidden; */
   line-height: 110%;
+  overflow: hidden;
+  position: relative;
 }
 .container > *:not(img) {
   padding: 12%;
@@ -46,7 +45,7 @@ body {
 p,
 .bottom p {
   color: var(--Slightly-transparent-white);
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 400;
   margin-bottom: -22%;
 }
@@ -56,24 +55,34 @@ h1 span {
 h1,
 h4 {
   font-weight: 700;
-  margin-bottom: -22%;
+  margin-bottom: -25%;
   line-height: 25px;
 }
 h4 {
   font-weight: 500;
+  font-size: 13px;
 }
 
 img {
   width: 100%;
-  height: auto;
-
+  height: 100%;
   grid-area: 1/2/4/3;
-  /* filter: var(--Soft-violet)(100%); */
-  filter: saturate(var(--Soft-violet, 5));
+  filter: var(--Soft-violet);
 }
+.container::after {
+  content: "";
+  background-color: var(--Soft-violet);
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  opacity: 0.3;
+  filter: saturate(1.6);
+}
+
 .bottom {
   display: flex;
-  font-size: 12px;
+  font-size: 10px;
   justify-content: space-between;
   width: 70%;
   text-transform: uppercase;
